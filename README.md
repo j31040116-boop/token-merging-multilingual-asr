@@ -13,7 +13,7 @@
   <a href="https://www.icnlsp.org/2026"><img src="docs/assets/icnlsp-logo.png" alt="ICNLSP 2026" height="60"></a>
 </p>
 
-Code + frozen results for **"Token Merging for Multilingual Speech Recognition: A Systematic Study Across Model Scale and Fine-Tuning"** — Dylan Luke Holyoak, UCLA. Oral at [ICNLSP 2026](https://www.icnlsp.org/2026).
+Code + frozen results for **"Token Merging for Multilingual Speech Recognition: A Systematic Study Across Model Scale and Fine-Tuning"** — Dylan Luke Holyoak. Oral at [ICNLSP 2026](https://www.icnlsp.org/2026welcome/).
 
 We apply adjacent token merging (ToMe / A-ToMe) to the Whisper encoder across 3 model scales (small/medium/large-v3), 16 FLEURS languages, and composition with DoRA decoder fine-tuning. Merging shortens the encoder sequence at inference time without any retraining and costs essentially nothing on multilingual ASR — see the numbers below.
 
@@ -189,8 +189,7 @@ The wheel ships all runtime deps in its `install_requires`, plus the 12 frozen C
                A Systematic Study Across Model Scale and Fine-Tuning},
   author    = {Holyoak, Dylan Luke},
   booktitle = {Proceedings of ICNLSP 2026},
-  year      = {2026},
-  address   = {University of California, Los Angeles}
+  year      = {2026}
 }
 ```
 

@@ -101,8 +101,7 @@ Full held-out table in paper §5.3 ¶3.
                A Systematic Study Across Model Scale and Fine-Tuning},
   author    = {Holyoak, Dylan Luke},
   booktitle = {Proceedings of ICNLSP 2026},
-  year      = {2026},
-  address   = {University of California, Los Angeles}
+  year      = {2026}
 }
 ```
 
