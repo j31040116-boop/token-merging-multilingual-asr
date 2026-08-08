@@ -1,0 +1,37 @@
+lang_id,lang_name,tonal,resource,family,checkpoint,config,layers,trr,per_layer_r,wer,wer_delta,halluc_rate,halluc_n_high_cr,halluc_n_empty,mean_hyp_words,mean_ref_words,seq_len_final,n_samples,elapsed_s
+vi_vn,Vietnamese,True,Medium,Austroasiatic,checkpoint-2000,baseline_ft,[],0.0,0.0,0.141013,0.0,0.0,0,0,30.34,30.38,1500,264,386.7
+vi_vn,Vietnamese,True,Medium,Austroasiatic,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.05,0.006391,0.142875,0.001862,0.0,0,0,30.34,30.38,1428,264,384.8
+vi_vn,Vietnamese,True,Medium,Austroasiatic,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.1,0.013084,0.142254,0.001241,0.0,0,0,30.34,30.38,1354,264,378.2
+vi_vn,Vietnamese,True,Medium,Austroasiatic,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.2,0.027508,0.142378,0.001365,0.0,0,0,30.36,30.38,1204,264,364.7
+vi_vn,Vietnamese,True,Medium,Austroasiatic,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.3,0.043605,0.142378,0.001365,0.0,0,0,30.34,30.38,1054,264,353.6
+vi_vn,Vietnamese,True,Medium,Austroasiatic,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.4,0.061857,0.142751,0.001738,0.0,0,0,30.34,30.38,904,264,345.6
+ha_ng,Hausa,True,Low,Chadic,checkpoint-2000,baseline_ft,[],0.0,0.0,0.753108,0.0,0.0,0,0,24.65,25.6,1500,264,412.5
+ha_ng,Hausa,True,Low,Chadic,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.05,0.006391,0.748771,-0.004337,0.0,0,0,24.59,25.6,1428,264,408.0
+ha_ng,Hausa,True,Low,Chadic,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.1,0.013084,0.748338,-0.00477,0.0,0,0,24.65,25.6,1354,264,403.0
+ha_ng,Hausa,True,Low,Chadic,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.2,0.027508,0.744868,-0.008239,0.0,0,0,24.71,25.6,1204,264,387.1
+ha_ng,Hausa,True,Low,Chadic,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.3,0.043605,0.747326,-0.005782,0.0,0,0,24.6,25.6,1054,264,377.2
+ha_ng,Hausa,True,Low,Chadic,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.4,0.061857,0.744724,-0.008384,0.0,0,0,24.62,25.6,904,264,364.4
+ln_cd,Lingala,True,Low,Bantu,checkpoint-2000,baseline_ft,[],0.0,0.0,0.521732,0.0,0.0,0,0,21.03,21.56,1500,264,361.8
+ln_cd,Lingala,True,Low,Bantu,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.05,0.006391,0.519637,-0.002095,0.0,0,0,21.02,21.56,1428,264,359.1
+ln_cd,Lingala,True,Low,Bantu,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.1,0.013084,0.522953,0.001222,0.0,0,0,20.99,21.56,1354,264,352.9
+ln_cd,Lingala,True,Low,Bantu,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.2,0.027508,0.521906,0.000175,0.0,0,0,20.94,21.56,1204,264,338.0
+ln_cd,Lingala,True,Low,Bantu,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.3,0.043605,0.526095,0.004364,0.0,0,0,20.94,21.56,1054,264,327.6
+ln_cd,Lingala,True,Low,Bantu,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.4,0.061857,0.527666,0.005935,0.0,0,0,20.97,21.56,904,264,316.2
+ta_in,Tamil,False,Medium,Dravidian,checkpoint-2000,baseline_ft,[],0.0,0.0,0.360005,0.0,0.022727,6,0,16.41,16.48,1500,264,1014.2
+ta_in,Tamil,False,Medium,Dravidian,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.05,0.006391,0.34241,-0.017596,0.037879,10,0,16.62,16.48,1428,264,1056.8
+ta_in,Tamil,False,Medium,Dravidian,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.1,0.013084,0.344484,-0.015522,0.045455,12,0,16.66,16.48,1354,264,1084.3
+ta_in,Tamil,False,Medium,Dravidian,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.2,0.027508,0.34241,-0.017596,0.041667,11,0,16.56,16.48,1204,264,1039.4
+ta_in,Tamil,False,Medium,Dravidian,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.3,0.043605,0.346825,-0.01318,0.045455,12,0,16.51,16.48,1054,264,1035.6
+ta_in,Tamil,False,Medium,Dravidian,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.4,0.061857,0.345956,-0.01405,0.034091,9,0,16.68,16.48,904,264,979.8
+mt_mt,Maltese,False,Low,Semitic,checkpoint-2000,baseline_ft,[],0.0,0.0,0.759183,0.0,0.0,0,0,18.65,19.14,1500,264,467.4
+mt_mt,Maltese,False,Low,Semitic,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.05,0.006391,0.762983,0.0038,0.0,0,0,18.61,19.14,1428,264,464.7
+mt_mt,Maltese,False,Low,Semitic,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.1,0.013084,0.760608,0.001425,0.0,0,0,18.67,19.14,1354,264,456.5
+mt_mt,Maltese,False,Low,Semitic,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.2,0.027508,0.758391,-0.000792,0.0,0,0,18.64,19.14,1204,264,438.7
+mt_mt,Maltese,False,Low,Semitic,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.3,0.043605,0.758233,-0.00095,0.0,0,0,18.64,19.14,1054,264,423.2
+mt_mt,Maltese,False,Low,Semitic,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.4,0.061857,0.76045,0.001267,0.0,0,0,18.71,19.14,904,264,409.3
+jv_id,Javanese,False,Very Low,Austronesian,checkpoint-2000,baseline_ft,[],0.0,0.0,0.51236,0.0,0.0,0,0,19.61,19.76,1500,264,364.1
+jv_id,Javanese,False,Very Low,Austronesian,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.05,0.006391,0.51236,0.0,0.0,0,0,19.69,19.76,1428,264,360.8
+jv_id,Javanese,False,Very Low,Austronesian,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.1,0.013084,0.507116,-0.005243,0.0,0,0,19.69,19.76,1354,264,354.0
+jv_id,Javanese,False,Very Low,Austronesian,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.2,0.027508,0.508801,-0.003558,0.0,0,0,19.66,19.76,1204,264,340.1
+jv_id,Javanese,False,Very Low,Austronesian,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.3,0.043605,0.504494,-0.007865,0.0,0,0,19.65,19.76,1054,264,330.5
+jv_id,Javanese,False,Very Low,Austronesian,checkpoint-2000,A,"[2, 5, 8, 11, 14, 17, 20, 23]",0.4,0.061857,0.50824,-0.00412,0.0,0,0,19.73,19.76,904,264,318.1

@@ -1,0 +1,16 @@
+# GPU (CUDA 12.4) torch wheels.
+#
+# NOTE: --extra-index-url (not --index-url). pip keeps its default PyPI
+# index and only falls back to the PyTorch index for wheels not on PyPI.
+# Using --index-url would apply globally and break combined installs like
+# `pip install -r requirements-gpu.txt -r requirements-common.txt` — pip
+# would then try (and fail) to resolve transformers/pandas/etc. against
+# download.pytorch.org.
+#
+# Install:
+#   pip install -r requirements-gpu.txt
+# Then:
+#   pip install -r requirements-common.txt
+--extra-index-url https://download.pytorch.org/whl/cu124
+torch==2.6.0+cu124
+torchaudio==2.6.0+cu124

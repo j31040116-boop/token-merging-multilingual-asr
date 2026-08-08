@@ -1,0 +1,49 @@
+lang_id,lang_name,tonal,resource,family,model,config,layers,trr,per_layer_r,wer,wer_delta,halluc_rate,halluc_n_high_cr,halluc_n_empty,mean_hyp_words,mean_ref_words,seq_len_final,n_samples,elapsed_s
+de_de,German,False,High,Germanic,whisper-large-v3,baseline,[],0.0,0.0,0.053907,0.0,0.0,0,0,21.82,22.0,1500,264,515.9
+de_de,German,False,High,Germanic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.05,0.005116,0.055442,0.001535,0.0,0,0,21.81,22.0,1430,264,494.4
+de_de,German,False,High,Germanic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.1,0.010481,0.056295,0.002388,0.0,0,0,21.81,22.0,1355,264,481.4
+de_de,German,False,High,Germanic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.2,0.022067,0.055271,0.001365,0.0,0,0,21.81,22.0,1205,264,447.9
+de_de,German,False,High,Germanic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.3,0.035039,0.055271,0.001365,0.0,0,0,21.81,22.0,1054,264,414.5
+de_de,German,False,High,Germanic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.4,0.0498,0.055101,0.001194,0.0,0,0,21.81,22.0,905,264,388.3
+es_419,Spanish,False,High,Romance,whisper-large-v3,baseline,[],0.0,0.0,0.027477,0.0,0.0,0,0,25.69,25.82,1500,264,512.4
+es_419,Spanish,False,High,Romance,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.05,0.005116,0.02967,0.002192,0.0,0,0,25.62,25.82,1430,264,492.6
+es_419,Spanish,False,High,Romance,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.1,0.010481,0.02967,0.002192,0.0,0,0,25.62,25.82,1355,264,479.4
+es_419,Spanish,False,High,Romance,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.2,0.022067,0.029524,0.002046,0.0,0,0,25.62,25.82,1205,264,446.0
+es_419,Spanish,False,High,Romance,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.3,0.035039,0.030254,0.002777,0.0,0,0,25.62,25.82,1054,264,412.6
+es_419,Spanish,False,High,Romance,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.4,0.0498,0.029816,0.002338,0.0,0,0,25.62,25.82,905,264,388.9
+th_th,Thai,True,Medium,Tai-Kadai,whisper-large-v3,baseline,[],0.0,0.0,0.263751,0.0,0.0,0,0,3.67,4.01,1500,264,1111.7
+th_th,Thai,True,Medium,Tai-Kadai,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.05,0.005116,0.264485,0.000733,0.0,0,0,3.8,4.01,1430,264,1079.8
+th_th,Thai,True,Medium,Tai-Kadai,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.1,0.010481,0.26366,-9.2e-05,0.003788,1,0,3.69,4.01,1355,264,1072.7
+th_th,Thai,True,Medium,Tai-Kadai,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.2,0.022067,0.264576,0.000825,0.007576,2,0,3.74,4.01,1205,264,1022.0
+th_th,Thai,True,Medium,Tai-Kadai,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.3,0.035039,0.264026,0.000275,0.003788,1,0,3.91,4.01,1054,264,938.2
+th_th,Thai,True,Medium,Tai-Kadai,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.4,0.0498,0.26806,0.004309,0.003788,1,0,3.75,4.01,905,264,874.6
+sw_ke,Swahili,False,Medium,Bantu,whisper-large-v3,baseline,[],0.0,0.0,0.344428,0.0,0.0,0,0,20.57,20.52,1500,264,612.7
+sw_ke,Swahili,False,Medium,Bantu,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.05,0.005116,0.345348,0.000919,0.0,0,0,20.59,20.52,1430,264,589.8
+sw_ke,Swahili,False,Medium,Bantu,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.1,0.010481,0.345348,0.000919,0.0,0,0,20.57,20.52,1355,264,573.6
+sw_ke,Swahili,False,Medium,Bantu,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.2,0.022067,0.342221,-0.002207,0.0,0,0,20.55,20.52,1205,264,532.4
+sw_ke,Swahili,False,Medium,Bantu,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.3,0.035039,0.343876,-0.000552,0.0,0,0,20.53,20.52,1054,264,494.2
+sw_ke,Swahili,False,Medium,Bantu,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.4,0.0498,0.34406,-0.000368,0.0,0,0,20.5,20.52,905,264,462.2
+af_za,Afrikaans,False,Low,Germanic,whisper-large-v3,baseline,[],0.0,0.0,0.32365,0.0,0.0,0,0,21.55,21.88,1500,264,519.6
+af_za,Afrikaans,False,Low,Germanic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.05,0.005116,0.331169,0.007519,0.0,0,0,21.53,21.88,1430,264,498.4
+af_za,Afrikaans,False,Low,Germanic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.1,0.010481,0.330485,0.006835,0.0,0,0,21.5,21.88,1355,264,484.7
+af_za,Afrikaans,False,Low,Germanic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.2,0.022067,0.328435,0.004785,0.0,0,0,21.51,21.88,1205,264,451.5
+af_za,Afrikaans,False,Low,Germanic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.3,0.035039,0.325871,0.002221,0.0,0,0,21.54,21.88,1054,264,418.2
+af_za,Afrikaans,False,Low,Germanic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.4,0.0498,0.323992,0.000342,0.0,0,0,21.54,21.88,905,264,390.7
+is_is,Icelandic,False,Low,Germanic,whisper-large-v3,baseline,[],0.0,0.0,0.315586,0.0,0.0,0,0,22.63,22.26,1500,264,130.5
+is_is,Icelandic,False,Low,Germanic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.05,0.005116,0.320426,0.00484,0.0,0,0,22.57,22.26,1430,264,125.3
+is_is,Icelandic,False,Low,Germanic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.1,0.010481,0.325266,0.009681,0.0,0,0,22.65,22.26,1355,264,121.9
+is_is,Icelandic,False,Low,Germanic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.2,0.022067,0.32333,0.007744,0.0,0,0,22.65,22.26,1205,264,113.1
+is_is,Icelandic,False,Low,Germanic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.3,0.035039,0.315586,0.0,0.0,0,0,22.7,22.26,1054,264,104.8
+is_is,Icelandic,False,Low,Germanic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.4,0.0498,0.310745,-0.00484,0.0,0,0,22.74,22.26,905,264,98.1
+cy_gb,Welsh,False,Low,Celtic,whisper-large-v3,baseline,[],0.0,0.0,0.295041,0.0,0.0,0,0,23.96,24.04,1500,264,684.7
+cy_gb,Welsh,False,Low,Celtic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.05,0.005116,0.293856,-0.001184,0.0,0,0,24.02,24.04,1430,264,657.8
+cy_gb,Welsh,False,Low,Celtic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.1,0.010481,0.292672,-0.002369,0.0,0,0,24.03,24.04,1355,264,640.3
+cy_gb,Welsh,False,Low,Celtic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.2,0.022067,0.294004,-0.001036,0.0,0,0,24.02,24.04,1205,264,594.9
+cy_gb,Welsh,False,Low,Celtic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.3,0.035039,0.295633,0.000592,0.0,0,0,24.03,24.04,1054,264,550.4
+cy_gb,Welsh,False,Low,Celtic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.4,0.0498,0.30037,0.005329,0.0,0,0,23.91,24.04,905,264,518.5
+kk_kz,Kazakh,False,Very Low,Turkic,whisper-large-v3,baseline,[],0.0,0.0,0.40103,0.0,0.0,0,0,17.35,17.4,1500,264,977.2
+kk_kz,Kazakh,False,Very Low,Turkic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.05,0.005116,0.400601,-0.000429,0.0,0,0,17.35,17.4,1430,264,936.5
+kk_kz,Kazakh,False,Very Low,Turkic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.1,0.010481,0.403392,0.002362,0.0,0,0,17.33,17.4,1355,264,907.0
+kk_kz,Kazakh,False,Very Low,Turkic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.2,0.022067,0.400601,-0.000429,0.0,0,0,17.34,17.4,1205,264,841.9
+kk_kz,Kazakh,False,Very Low,Turkic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.3,0.035039,0.397166,-0.003864,0.0,0,0,17.35,17.4,1054,264,784.1
+kk_kz,Kazakh,False,Very Low,Turkic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.4,0.0498,0.408974,0.007943,0.0,0,0,17.26,17.4,905,264,731.2

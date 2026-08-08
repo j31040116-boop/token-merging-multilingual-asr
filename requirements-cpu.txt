@@ -1,0 +1,7 @@
+# CPU-only torch wheels (no CUDA runtime required). Install with:
+#   pip install -r requirements-cpu.txt
+#   pip install -r requirements-common.txt
+# Enough for: figure regeneration, FLOP analysis, pytest CPU unit tests.
+# NOT enough for: WER runs (need a GPU) or wall-clock benchmark.
+torch==2.6.0
+torchaudio==2.6.0

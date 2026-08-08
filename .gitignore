@@ -1,0 +1,46 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+
+# --- Virtualenvs ---
+venv/
+.venv/
+env/
+
+# --- HuggingFace / dataset caches (large, fetched at runtime) ---
+.cache/
+hf_cache/
+fleurs_cache/
+
+# --- Local run outputs (not the paper-canonical CSVs in data/paper_results/) ---
+outputs/
+logs/
+*.log
+runs/
+
+# --- Model checkpoints (published to HuggingFace Hub, not git) ---
+checkpoints/
+*.safetensors
+*.bin
+*.pt
+
+# --- IDE / OS ---
+.idea/
+.vscode/
+.DS_Store
+.AppleDouble
+
+# --- Secrets ---
+.env
+*.pem
+*.key
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*.ipynb

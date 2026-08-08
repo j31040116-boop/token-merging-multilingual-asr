@@ -1,0 +1,9 @@
+# ============================================================
+# Legacy combined requirements — DEPRECATED, use split files.
+# The +cu124 pins below only work on a machine with the PyTorch CUDA 12.4
+# index available. For CPU-only installs, use requirements-cpu.txt +
+# requirements-common.txt instead. For GPU installs matching the paper env,
+# use requirements-gpu.txt + requirements-common.txt.
+# ============================================================
+-r requirements-gpu.txt
+-r requirements-common.txt

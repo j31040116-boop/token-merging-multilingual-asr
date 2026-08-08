@@ -1,0 +1,49 @@
+lang_id,lang_name,tonal,resource,family,model,config,layers,trr,per_layer_r,wer,wer_delta,halluc_rate,halluc_n_high_cr,halluc_n_empty,mean_hyp_words,mean_ref_words,seq_len_final,n_samples,elapsed_s
+vi_vn,Vietnamese,True,Medium,Austroasiatic,whisper-large-v3,baseline,[],0.0,0.0,0.108491,0.0,0.0,0,0,29.95,30.38,1500,264,686.5
+vi_vn,Vietnamese,True,Medium,Austroasiatic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.05,0.005116,0.112587,0.004096,0.0,0,0,29.87,30.38,1430,264,663.8
+vi_vn,Vietnamese,True,Medium,Austroasiatic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.1,0.010481,0.11209,0.0036,0.0,0,0,29.92,30.38,1355,264,645.0
+vi_vn,Vietnamese,True,Medium,Austroasiatic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.2,0.022067,0.106877,-0.001614,0.0,0,0,29.98,30.38,1205,264,596.5
+vi_vn,Vietnamese,True,Medium,Austroasiatic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.3,0.035039,0.107001,-0.00149,0.0,0,0,29.99,30.38,1054,264,550.3
+vi_vn,Vietnamese,True,Medium,Austroasiatic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.4,0.0498,0.106629,-0.001862,0.0,0,0,30.0,30.38,905,264,510.4
+ta_in,Tamil,False,Medium,Dravidian,whisper-large-v3,baseline,[],0.0,0.0,0.320599,0.0,0.011364,3,0,16.44,16.48,1500,264,1552.8
+ta_in,Tamil,False,Medium,Dravidian,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.05,0.005116,0.315983,-0.004616,0.007576,2,0,16.53,16.48,1430,264,1475.1
+ta_in,Tamil,False,Medium,Dravidian,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.1,0.010481,0.318459,-0.002141,0.003788,1,0,16.43,16.48,1355,264,1410.2
+ta_in,Tamil,False,Medium,Dravidian,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.2,0.022067,0.314645,-0.005954,0.015152,4,0,16.59,16.48,1205,264,1377.7
+ta_in,Tamil,False,Medium,Dravidian,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.3,0.035039,0.311835,-0.008764,0.018939,5,0,16.56,16.48,1054,264,1296.3
+ta_in,Tamil,False,Medium,Dravidian,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.4,0.0498,0.318793,-0.001806,0.007576,2,0,16.4,16.48,905,264,1151.1
+jv_id,Javanese,False,Very Low,Austronesian,whisper-large-v3,baseline,[],0.0,0.0,0.601311,0.0,0.0,0,0,19.68,19.76,1500,264,632.9
+jv_id,Javanese,False,Very Low,Austronesian,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.05,0.005116,0.620037,0.018727,0.0,0,0,19.55,19.76,1430,264,607.0
+jv_id,Javanese,False,Very Low,Austronesian,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.1,0.010481,0.621723,0.020412,0.0,0,0,19.65,19.76,1355,264,590.7
+jv_id,Javanese,False,Very Low,Austronesian,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.2,0.022067,0.623221,0.02191,0.0,0,0,19.73,19.76,1205,264,547.8
+jv_id,Javanese,False,Very Low,Austronesian,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.3,0.035039,0.61573,0.014419,0.0,0,0,19.77,19.76,1054,264,506.1
+jv_id,Javanese,False,Very Low,Austronesian,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.4,0.0498,0.61779,0.016479,0.0,0,0,19.83,19.76,905,264,465.2
+mt_mt,Maltese,False,Low,Semitic,whisper-large-v3,baseline,[],0.0,0.0,0.681127,0.0,0.0,0,0,19.2,19.14,1500,264,844.1
+mt_mt,Maltese,False,Low,Semitic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.05,0.005116,0.678594,-0.002533,0.0,0,0,19.25,19.14,1430,264,803.9
+mt_mt,Maltese,False,Low,Semitic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.1,0.010481,0.676377,-0.00475,0.0,0,0,19.26,19.14,1355,264,781.7
+mt_mt,Maltese,False,Low,Semitic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.2,0.022067,0.673686,-0.007441,0.0,0,0,19.23,19.14,1205,264,724.1
+mt_mt,Maltese,False,Low,Semitic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.3,0.035039,0.675586,-0.005541,0.0,0,0,19.25,19.14,1054,264,667.2
+mt_mt,Maltese,False,Low,Semitic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.4,0.0498,0.677169,-0.003958,0.0,0,0,19.23,19.14,905,264,614.7
+ln_cd,Lingala,True,Low,Bantu,whisper-large-v3,baseline,[],0.0,0.0,0.700646,0.0,0.0,0,0,22.97,21.56,1500,264,646.8
+ln_cd,Lingala,True,Low,Bantu,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.05,0.005116,0.704311,0.003666,0.0,0,0,23.02,21.56,1430,264,619.0
+ln_cd,Lingala,True,Low,Bantu,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.1,0.010481,0.701169,0.000524,0.0,0,0,23.0,21.56,1355,264,602.8
+ln_cd,Lingala,True,Low,Bantu,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.2,0.022067,0.700122,-0.000524,0.0,0,0,23.01,21.56,1205,264,559.4
+ln_cd,Lingala,True,Low,Bantu,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.3,0.035039,0.697853,-0.002793,0.0,0,0,22.98,21.56,1054,264,521.9
+ln_cd,Lingala,True,Low,Bantu,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.4,0.0498,0.700471,-0.000175,0.0,0,0,22.91,21.56,905,264,484.7
+ha_ng,Hausa,True,Low,Chadic,whisper-large-v3,baseline,[],0.0,0.0,0.835357,0.0,0.0,0,0,23.66,25.6,1500,264,724.2
+ha_ng,Hausa,True,Low,Chadic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.05,0.005116,0.842151,0.006794,0.0,0,0,23.83,25.6,1430,264,697.9
+ha_ng,Hausa,True,Low,Chadic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.1,0.010481,0.848077,0.01272,0.0,0,0,23.78,25.6,1355,264,677.5
+ha_ng,Hausa,True,Low,Chadic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.2,0.022067,0.846198,0.010841,0.0,0,0,23.76,25.6,1205,264,628.6
+ha_ng,Hausa,True,Low,Chadic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.3,0.035039,0.848367,0.01301,0.0,0,0,23.75,25.6,1054,264,582.8
+ha_ng,Hausa,True,Low,Chadic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.4,0.0498,0.846054,0.010697,0.0,0,0,23.74,25.6,905,264,534.7
+en_us,English,False,High,Germanic,whisper-large-v3,baseline,[],0.0,0.0,0.04841,0.0,0.0,0,0,21.11,21.13,1500,264,415.6
+en_us,English,False,High,Germanic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.05,0.005116,0.04735,-0.00106,0.0,0,0,21.13,21.13,1430,264,383.6
+en_us,English,False,High,Germanic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.1,0.010481,0.047527,-0.000883,0.0,0,0,21.13,21.13,1355,264,372.8
+en_us,English,False,High,Germanic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.2,0.022067,0.04735,-0.00106,0.0,0,0,21.13,21.13,1205,264,347.6
+en_us,English,False,High,Germanic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.3,0.035039,0.047527,-0.000883,0.0,0,0,21.13,21.13,1054,264,323.2
+en_us,English,False,High,Germanic,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.4,0.0498,0.048233,-0.000177,0.0,0,0,21.13,21.13,905,264,294.2
+fr_fr,French,False,High,Romance,whisper-large-v3,baseline,[],0.0,0.0,0.059874,0.0,0.0,0,0,25.45,25.75,1500,264,566.5
+fr_fr,French,False,High,Romance,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.05,0.005116,0.058618,-0.001256,0.0,0,0,25.48,25.75,1430,264,542.7
+fr_fr,French,False,High,Romance,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.1,0.010481,0.059037,-0.000837,0.0,0,0,25.48,25.75,1355,264,527.9
+fr_fr,French,False,High,Romance,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.2,0.022067,0.060014,0.00014,0.0,0,0,25.48,25.75,1205,264,491.5
+fr_fr,French,False,High,Romance,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.3,0.035039,0.061828,0.001954,0.0,0,0,25.45,25.75,1054,264,454.8
+fr_fr,French,False,High,Romance,whisper-large-v3,A,"[2, 5, 8, 11, 14, 17, 20, 23, 26, 29]",0.4,0.0498,0.06462,0.004745,0.0,0,0,25.39,25.75,905,264,420.7

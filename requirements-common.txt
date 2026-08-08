@@ -1,0 +1,63 @@
+# ============================================================
+# tmm-asr — non-CUDA runtime deps (installs everywhere).
+# ============================================================
+# Install torch/torchaudio FIRST with the wheel matching your hardware:
+#   GPU (CUDA 12.4):  pip install -r requirements-gpu.txt
+#   CPU-only:         pip install -r requirements-cpu.txt
+# Then this file:     pip install -r requirements-common.txt
+# Wheel install (`pip install tmm-asr`) does all of the above automatically,
+# but for a CUDA-tagged torch you must still use requirements-gpu.txt below.
+# ============================================================
+
+numpy==2.4.4
+
+# --- Whisper model + processor (HuggingFace) ---
+# transformers 5.5.3: logprob_threshold removed from generate() in this version.
+# Do not upgrade — it changes the temperature fallback API used in the pipeline.
+transformers==5.5.3
+tokenizers==0.22.2
+safetensors==0.7.0
+accelerate==1.13.0
+huggingface_hub==1.10.1
+
+# --- Whisper text normalizer (openai/whisper) ---
+openai-whisper==20250625
+tiktoken==0.12.0
+regex==2026.4.4
+
+# --- Dataset loading (FLEURS) ---
+datasets==2.20.0
+pyarrow==23.0.1
+pyarrow-hotfix==0.7
+fsspec==2024.5.0
+xxhash==3.6.0
+dill==0.3.8
+multiprocess==0.70.16
+
+# --- WER computation ---
+jiwer==4.0.0
+RapidFuzz==3.14.5
+evaluate==0.4.6
+
+# --- Thai tokenization (th_th language WER) ---
+pythainlp==5.3.4
+transliterate==1.10.2
+
+# --- Audio processing (FLEURS streaming) ---
+soundfile==0.13.1
+librosa==0.11.0
+audioread==3.1.0
+soxr==1.0.0
+lazy-loader==0.5
+pooch==1.9.0
+
+# --- DoRA fine-tuning (tmm_asr.train.dora only) ---
+peft==0.19.1
+
+# --- General utilities ---
+pandas==3.0.2
+tqdm==4.67.3
+scipy==1.17.1
+
+# --- Analysis + figures ---
+matplotlib==3.10.8

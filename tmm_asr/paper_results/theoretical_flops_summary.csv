@@ -1,0 +1,9 @@
+source_csv,n_rows_at_trr_0.40,mean_enc_flops_reduction,mean_baseline_gflops,mean_merged_gflops
+finetune_holdout_cfgA_n264_checkpoint-2000_mix6_with_flops.csv,10,0.24300646036681922,1138.065408,861.5081615359999
+finetune_merge_rerun_cfgA_n264_checkpoint-2000_mix6_with_flops.csv,6,0.2430064603668192,1138.0654080000002,861.5081615359999
+fixed_rate_main_rerun_cfgA_n264_halfall_single_with_flops.csv,6,0.2430064603668192,1138.0654080000002,861.5081615359999
+whisper_size_baseline_whisper-large-v3_n264_mix16_with_flops.csv,6,0.2505787982778498,2273.77152,1704.0125849600001
+whisper_size_baseline_whisper-large-v3_n264_mix16_gpu0_with_flops.csv,6,0.2505787982778498,2273.77152,1704.0125849600001
+whisper_size_baseline_whisper-large-v3_n264_mix16_gpu1_with_flops.csv,8,0.2505787982778498,2273.77152,1704.01258496
+whisper_size_baseline_whisper-medium_n264_medium_highres_with_flops.csv,5,0.24300646036681922,1138.065408,861.5081615359999
+whisper_size_baseline_whisper-small_n264_mix16_with_flops.csv,6,0.24594656883747498,344.162304,259.516766208

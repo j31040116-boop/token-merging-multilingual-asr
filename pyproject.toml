@@ -1,0 +1,93 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tmm-asr"
+version = "0.1.0"
+description = "Token Merging for Multilingual Speech Recognition (ICNLSP 2026)"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"    # numpy 2.4, pandas 3.0, scipy 1.17 require >=3.11; paper env is 3.12
+authors = [
+    { name = "Dylan Luke Holyoak" },
+]
+keywords = ["speech-recognition", "whisper", "token-merging", "multilingual", "asr", "efficiency"]
+classifiers = [
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Intended Audience :: Science/Research",
+]
+
+# Runtime dependencies for `pip install tmm-asr` (or `pip install .`).
+# The CUDA-tagged torch wheel is NOT here — it must be installed separately
+# from the PyTorch index because pip won't resolve the +cu124 tag. See the
+# README "Install" section for the exact command. `torch` itself is listed
+# with a compatible version lower bound so an already-installed +cuXXX or
+# +cpu wheel is honoured; a fresh `pip install tmm-asr` on a machine with
+# no torch will install a plain CPU wheel from PyPI.
+dependencies = [
+    "torch>=2.6,<2.7",
+    "torchaudio>=2.6,<2.7",
+    "numpy>=2.4,<3",
+    "transformers==5.5.3",
+    "tokenizers==0.22.2",
+    "safetensors==0.7.0",
+    "accelerate==1.13.0",
+    "huggingface_hub==1.10.1",
+    "openai-whisper==20250625",
+    "tiktoken==0.12.0",
+    "regex==2026.4.4",
+    "datasets==2.20.0",
+    "pyarrow==23.0.1",
+    "pyarrow-hotfix==0.7",
+    "fsspec==2024.5.0",
+    "xxhash==3.6.0",
+    "dill==0.3.8",
+    "multiprocess==0.70.16",
+    "jiwer==4.0.0",
+    "RapidFuzz==3.14.5",
+    "evaluate==0.4.6",
+    "pythainlp==5.3.4",
+    "transliterate==1.10.2",
+    "soundfile==0.13.1",
+    "librosa==0.11.0",
+    "audioread==3.1.0",
+    "soxr==1.0.0",
+    "lazy-loader==0.5",
+    "pooch==1.9.0",
+    "peft==0.19.1",
+    "pandas>=2,<4",
+    "tqdm==4.67.3",
+    "scipy>=1.14,<2",
+    "matplotlib>=3.10,<4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.6",
+    "build>=1.0",     # for `python -m build` wheel checks
+]
+
+[project.urls]
+Homepage = "https://github.com/j31040116-boop/token-merging-multilingual-asr"
+Repository = "https://github.com/j31040116-boop/token-merging-multilingual-asr"
+
+[tool.setuptools.packages.find]
+include = ["tmm_asr*"]
+
+# Ship the frozen paper CSVs + manifest INSIDE the wheel so figure regen
+# works after `pip install tmm-asr` without needing the source tree.
+[tool.setuptools.package-data]
+tmm_asr = ["paper_results/*.csv", "paper_results/*.json"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]  # line length handled by formatter, not linter

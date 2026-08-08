@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying paper."
+title: "Token Merging for Multilingual Speech Recognition: A Systematic Study Across Model Scale and Fine-Tuning"
+authors:
+  - family-names: Holyoak
+    given-names: Dylan Luke
+    affiliation: "University of California, Los Angeles"
+license: Apache-2.0
+repository-code: "https://github.com/j31040116-boop/token-merging-multilingual-asr"
+version: 0.1.0
+date-released: 2026-08-02
+preferred-citation:
+  type: conference-paper
+  title: "Token Merging for Multilingual Speech Recognition: A Systematic Study Across Model Scale and Fine-Tuning"
+  authors:
+    - family-names: Holyoak
+      given-names: Dylan Luke
+      affiliation: "University of California, Los Angeles"
+  year: 2026
+  conference:
+    name: "International Conference on Natural Language and Speech Processing (ICNLSP)"
