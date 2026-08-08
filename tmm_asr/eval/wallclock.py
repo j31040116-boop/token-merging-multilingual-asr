@@ -8,7 +8,7 @@ residual and the FFN), Config A cascade [2, 5, 8, 11, 14, 17, 20, 23] — via
 WER number in the paper.
 
 Cohort defaults to the paper's mix6 (Hausa, Javanese, Lingala, Maltese,
-Tamil, Vietnamese) with 8 samples/lang, matching the Limitations §
+Tamil, Vietnamese) with 8 samples/lang, matching the §5.4
 methodology block.
 
 Conditions per sample:
@@ -89,12 +89,12 @@ DATASET_REVISION = "d7c758a6dceecd54a98cac43404d3d576e721f07"
 # step 3, matching every WER number in the paper (via tmm_asr.merging).
 CONFIG_A_LAYERS  = [2, 5, 8, 11, 14, 17, 20, 23]
 
-# Paper mix6 wall-clock cohort (Limitations §): 6 low/mid-resource langs.
+# Paper §5.4 wall-clock cohort: 6 low/mid-resource langs.
 DEFAULT_LANGS    = ["ha_ng", "jv_id", "ln_cd", "mt_mt", "ta_in", "vi_vn"]
 
 DEFAULT_TRRS     = [0.20, 0.30, 0.40]
 BATCH_SIZE          = 1    # locked: latency benchmark, not throughput
-DEFAULT_N_SAMPLES   = 8    # paper Limitations § reports 8 utterances/lang
+DEFAULT_N_SAMPLES   = 8    # paper §5.4 reports 8 utterances/lang
 N_GLOBAL_WARMUP     = 10   # full forward passes at script start to bring GPU to max clock
 DEFAULT_N_WARMUP    = 5    # per-condition warmup (discarded) inside measure()
 DEFAULT_N_ENC_ITERS = 10
@@ -514,7 +514,7 @@ def main():
     parser.add_argument("--trrs", nargs="+", type=float, default=None,
         help=f"Space-separated TRRs. Default: {' '.join(map(str, DEFAULT_TRRS))}")
     parser.add_argument("--n-samples",    type=int,   default=DEFAULT_N_SAMPLES,
-        help=f"Utterances per language (default {DEFAULT_N_SAMPLES}, paper Limitations §).")
+        help=f"Utterances per language (default {DEFAULT_N_SAMPLES}, paper §5.4).")
     parser.add_argument("--n-warmup",     type=int,   default=DEFAULT_N_WARMUP)
     parser.add_argument("--n-enc-iters",  type=int,   default=DEFAULT_N_ENC_ITERS)
     parser.add_argument("--n-e2e-iters",  type=int,   default=DEFAULT_N_E2E_ITERS)

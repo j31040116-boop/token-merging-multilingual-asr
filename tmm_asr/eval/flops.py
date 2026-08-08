@@ -271,7 +271,7 @@ def summarise(out_paths: list[Path]) -> pd.DataFrame:
             continue
         # If the CSV has a `lang_id` column, restrict to the paper's mix6
         # trained cohort where present so the cross-model summary matches
-        # the trained-6 numbers cited in §5.2.
+        # the trained-6 cross-scale numbers cited in §5.3.
         trained_6 = {"vi_vn", "ta_in", "jv_id", "mt_mt", "ln_cd", "ha_ng"}
         if "lang_id" in sub.columns:
             sub_f = sub[sub["lang_id"].isin(trained_6)]

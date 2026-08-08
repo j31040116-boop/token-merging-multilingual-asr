@@ -77,9 +77,8 @@
       "model": "openai/whisper-medium",
       "paper_refs": [
         "Section 5.1",
-        "Table 2 (medium-stock column)",
-        "Figure 2 (bottom: low-res)",
-        "Appendix Table 3 (medium-stock column)"
+        "Figure 1 (bottom: 12-language main sweep)",
+        "Appendix Table 3"
       ],
       "columns_of_interest": [
         "lang_id",
@@ -87,7 +86,7 @@
         "wer",
         "wer_delta"
       ],
-      "notes": "Main sweep on 18 mid/low/very-low-resource languages at TRRs {0, .05, .10, .20, .30, .40}. The paper plots the 12-language subset in `langs_plotted` (matches `main_sweep_12` under `paper.cohort`); the other 6 rows (am_et, pa_in, sn_zw, so_so, uz_uz, yo_ng) were collected in the same run but excluded from Table 2 / Figure 2 for cohort-consistency reasons. Cited numbers (over the 12 plotted langs at TRR=0.40): mean Delta-WER = -0.21 pp; worst degradation = +1.01 pp (sw_ke); largest improvement = -1.41 pp (ln_cd). Recomputing over all 18 rows will not reproduce those exact numbers.",
+      "notes": "Main sweep on 18 mid/low/very-low-resource languages at TRRs {0, .05, .10, .20, .30, .40}. The paper plots the 12-language subset in `langs_plotted` (matches `main_sweep_12` under `paper.cohort`); the other 6 rows (am_et, pa_in, sn_zw, so_so, uz_uz, yo_ng) were collected in the same run but excluded from Appendix Table 3 / Figure 1 for cohort-consistency reasons. Cited numbers (over the 12 plotted langs at TRR=0.40): mean Delta-WER = -0.21 pp; worst degradation = +1.01 pp (sw_ke); largest improvement = -1.41 pp (ln_cd). Recomputing over all 18 rows will not reproduce those exact numbers.",
       "langs_in_csv": [
         "af_za",
         "am_et",
@@ -130,10 +129,10 @@
       "produced_by": "tmm_asr.eval.cross_scale",
       "model": "openai/whisper-medium",
       "paper_refs": [
-        "Table 2 (high-res anchors)",
-        "Figure 2 top"
+        "Section 5.1",
+        "Figure 1 (top: high-resource anchors)"
       ],
-      "notes": "Medium-model anchor sweep. Contains 5 high-resource languages (en, es, de, fr, cmn); the paper's Figure 2 top and Table 2 anchor row use the 4-language subset in `langs_plotted` (en/es/de/fr) — Mandarin was collected in the same run but excluded to keep the anchor cohort aligned with the cross-scale plots in Figure 3.",
+      "notes": "Medium-model anchor sweep. Contains 5 high-resource languages (en, es, de, fr, cmn); the paper's Figure 1 top uses the 4-language subset in `langs_plotted` (en/es/de/fr) — Mandarin was collected in the same run but excluded to keep the anchor cohort aligned with the cross-scale plots in Figure 2.",
       "langs_in_csv": [
         "cmn_hans_cn",
         "de_de",
@@ -155,9 +154,9 @@
       "produced_by": "tmm_asr.eval.cross_scale",
       "model": "openai/whisper-small",
       "paper_refs": [
-        "Section 5.2",
-        "Figure 3 (small line)",
-        "Appendix Table 3 (small column)"
+        "Section 5.3",
+        "Figure 2 (small line)",
+        "Appendix Table 4 (small rows)"
       ],
       "notes": "Full 16-lang cross-scale sweep on whisper-small (244M, 12 enc layers). Mean Delta-WER on trained-6 at TRR=0.40 = +0.08 pp."
     },
@@ -168,9 +167,9 @@
       "produced_by": "scripts/merge_large_v3_shards.py (concat of the two GPU shards below)",
       "model": "openai/whisper-large-v3",
       "paper_refs": [
-        "Section 5.2",
-        "Figure 3 (large-v3 line)",
-        "Appendix Table 3 (large-v3 column)"
+        "Section 5.3",
+        "Figure 2 (large-v3 line)",
+        "Appendix Table 4 (large-v3 rows)"
       ],
       "notes": "Canonical merged 16-lang cross-scale sweep on whisper-large-v3 (1.55B, 32 enc layers). Mean Delta-WER on trained-6 at TRR=0.40 = +0.32 pp; worst +1.65 (Javanese)."
     },
@@ -181,7 +180,7 @@
       "produced_by": "tmm_asr.eval.cross_scale (GPU 0 shard, 8 langs)",
       "model": "openai/whisper-large-v3",
       "paper_refs": [
-        "Figure 3 (loaded via fig3_cross_scale_ft.py which concatenates both shards)"
+        "Figure 2 (loaded via fig3_cross_scale_ft.py which concatenates both shards)"
       ],
       "notes": "Dual-GPU launch splits 16 langs 8+8 for wall-clock. Contains: vi_vn ta_in jv_id mt_mt ln_cd ha_ng en_us fr_fr."
     },
@@ -192,7 +191,7 @@
       "produced_by": "tmm_asr.eval.cross_scale (GPU 1 shard, 8 langs)",
       "model": "openai/whisper-large-v3",
       "paper_refs": [
-        "Figure 3 (loaded via fig3_cross_scale_ft.py which concatenates both shards)"
+        "Figure 2 (loaded via fig3_cross_scale_ft.py which concatenates both shards)"
       ],
       "notes": "Contains: de_de es_419 th_th sw_ke af_za is_is cy_gb kk_kz."
     },
@@ -203,10 +202,10 @@
       "produced_by": "tmm_asr.eval.ft_merge",
       "model": "openai/whisper-medium + DoRA (mix6 checkpoint-2000)",
       "paper_refs": [
-        "Section 5.3",
-        "Table 2 (DoRA column)",
-        "Figure 3 (medium+DoRA line)",
-        "Appendix Table 3 (DoRA column)"
+        "Section 5.2",
+        "Table 2",
+        "Figure 2 (medium+DoRA line)",
+        "Appendix Table 4 (medium+DoRA rows)"
       ],
       "notes": "Merging sweep applied on top of the DoRA-adapted model. Max cost at TRR=0.40 = +0.59 pp (Lingala). Fine-tuned WER improvements over stock medium: Lingala -31 pp, Javanese -16 pp, Hausa -13 pp, Maltese -6 pp; Vietnamese + Tamil unchanged."
     },
@@ -217,7 +216,8 @@
       "produced_by": "tmm_asr.eval.ft_holdout",
       "model": "openai/whisper-medium + DoRA (mix6 checkpoint-2000)",
       "paper_refs": [
-        "Section 5.3 ¶3 (held-out generalization)"
+        "Section 5.2 (held-out generalization)",
+        "Appendix Table 5"
       ],
       "notes": "Merging + DoRA evaluated on 10 held-out languages (4 anchors + 6 untrained mid/low). Anchors preserved (+0.02 pp mean drift from FT). Untrained drift +1.77 pp mean, max +3.78 (kk_kz). Merging still cheap: mean +0.23 pp, max +0.97 (Icelandic)."
     },
@@ -228,7 +228,7 @@
       "produced_by": "tmm_asr.eval.layer_similarity",
       "model": "openai/whisper-small",
       "paper_refs": [
-        "Figure 1 (small panel)"
+        "Figure 3 (small panel)"
       ],
       "notes": "Per-layer mean head-averaged K-cosine similarity across 16 langs, forward-pass only (no decoding)."
     },
@@ -239,7 +239,7 @@
       "produced_by": "tmm_asr.eval.layer_similarity",
       "model": "openai/whisper-medium",
       "paper_refs": [
-        "Figure 1 (medium panel)"
+        "Figure 3 (medium panel)"
       ],
       "notes": "Regenerated on all 16 langs. Per-layer means differ <0.4% from the earlier 11-lang cohort — structural invariance validated."
     },
@@ -250,7 +250,7 @@
       "produced_by": "tmm_asr.eval.layer_similarity",
       "model": "openai/whisper-large-v3",
       "paper_refs": [
-        "Figure 1 (large-v3 panel)"
+        "Figure 3 (large-v3 panel)"
       ],
       "notes": "16-lang, 32-layer profile."
     },
@@ -260,10 +260,31 @@
       "size_bytes": 1042,
       "produced_by": "tmm_asr.eval.flops",
       "paper_refs": [
-        "Section 5.4",
-        "Appendix A (FLOP Derivation)"
+        "Appendix A (Theoretical FLOP Derivation)"
       ],
       "notes": "Per-model encoder FLOP reductions at TRR=0.40: small 24.6%, medium 24.3%, DoRA 24.3%, large-v3 25.1%. Analytic, no GPU required. Regenerated from the eight source *_with_flops.csv sidecars produced by `tmm_asr.eval.flops` over the current release CSVs (mix6 / mix16); historical filenames like medium_stock_6FT and large_v3_func5 are no longer referenced."
+    },
+    {
+      "name": "wallclock.csv",
+      "sha256": "3f3ad988c3be242fc1b6d15cecb968678f3f255c57dbc07e1339557aa611f22a",
+      "size_bytes": 206786,
+      "produced_by": "tmm_asr.eval.wallclock --encoder-only",
+      "model": "openai/whisper-medium",
+      "paper_refs": [
+        "Section 5.4"
+      ],
+      "notes": "Raw CUDA-event encoder timing measurements: 6 languages, 8 utterances per language, batch size 1, 10 measured encoder iterations per condition, RTX 3080 Ti."
+    },
+    {
+      "name": "wallclock_summary.csv",
+      "sha256": "4fc1093bb3faea5d0633c4bb28c7f8257e14e424cb0c5e99512cf3e4e1e7b2f7",
+      "size_bytes": 3030,
+      "produced_by": "tmm_asr.eval.wallclock --encoder-only",
+      "model": "openai/whisper-medium",
+      "paper_refs": [
+        "Section 5.4"
+      ],
+      "notes": "Per-language aggregates supporting the reported encoder speedups: 1.10x at TRR 0.20, 1.18x at TRR 0.30, and 1.27x at TRR 0.40."
     }
   ]
 }

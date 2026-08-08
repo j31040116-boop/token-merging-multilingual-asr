@@ -23,7 +23,7 @@ pipeline_tag: automatic-speech-recognition
 
 DoRA-adapted **openai/whisper-medium** on 6 low-resource FLEURS languages: Vietnamese, Hausa, Lingala, Tamil, Maltese, Javanese. Decoder-only adaptation — encoder is unchanged from base, so encoder-side interventions like token merging behave identically.
 
-Backs §5.3 of "Token Merging for Multilingual Speech Recognition: A Systematic Study Across Model Scale and Fine-Tuning" (Holyoak, UCLA — ICNLSP 2026 oral).
+Backs §5.2 of "Token Merging for Multilingual Speech Recognition: A Systematic Study Across Model Scale and Fine-Tuning" (Dylan Luke Holyoak — ICNLSP 2026 oral).
 
 - Code: https://github.com/j31040116-boop/token-merging-multilingual-asr
 
@@ -76,7 +76,7 @@ Full training script: [`tmm_asr/train/dora.py`](../tmm_asr/train/dora.py).
 | Vietnamese| 15.5 | 15.4 |   −0.1 |
 | Tamil     | 25.1 | 25.0 |   −0.1 |
 
-Token merging on top of this adapter costs at most +0.59 pp WER at TRR = 0.40 (Lingala). See paper §5.3.
+Token merging on top of this adapter costs at most +0.59 pp WER at TRR = 0.40 (Lingala). See paper §5.2.
 
 ## Generalisation to held-out languages
 
@@ -85,12 +85,12 @@ Applied to 10 languages the adapter was NOT trained on (English, French, German,
 - Untrained mid/low-res drift +1.77 pp mean, max +3.78 pp (Kazakh)
 - Merging still cheap: mean +0.23 pp, max +0.97 pp (Icelandic)
 
-Full held-out table in paper §5.3 ¶3.
+Full held-out table in paper Appendix Table 5; see §5.2 for the discussion.
 
 ## Limitations
 
 - Encoder unchanged, so any encoder-language-code mismatch (e.g. Whisper's `jw` for Javanese) still needs to be handled at the processor level.
-- Encoder-only latency improves by 1.21–1.27× at TRR = 0.40 on the reported RTX 3080 Ti benchmark. End-to-end autoregressive decoding does not materially improve because decoder work dominates total latency. See the paper's Limitations section and `tmm_asr.eval.wallclock` for the measurement protocol.
+- Encoder-only latency improves by 1.27× at TRR = 0.40 on the reported RTX 3080 Ti benchmark. See paper §5.4 and `tmm_asr.eval.wallclock` for the measurement protocol.
 - Trained only on FLEURS narrow-band read speech. Domain shift to noisy / conversational speech not evaluated.
 
 ## Citation

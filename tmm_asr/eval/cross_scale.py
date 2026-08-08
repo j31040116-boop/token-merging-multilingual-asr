@@ -57,7 +57,7 @@ warnings.filterwarnings("ignore")
 # Defaults
 DEFAULT_MODEL = "openai/whisper-small"
 # Paper mix6 cohort — the six languages the DoRA adapter was trained on and
-# that all §5.2 cross-scale results in the paper are reported over.
+# that all §5.3 cross-scale results in the paper are reported over.
 LANGS_FT      = ["vi_vn", "ta_in", "jv_id", "mt_mt", "ln_cd", "ha_ng"]
 TARGET_TRRS   = [0.05, 0.10, 0.20, 0.30, 0.40]
 N_DEFAULT     = 264

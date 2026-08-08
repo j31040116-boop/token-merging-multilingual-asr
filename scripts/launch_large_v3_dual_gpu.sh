@@ -5,7 +5,7 @@
 # the two shards concatenate into the canonical mix16 CSV via
 # scripts/merge_large_v3_shards.py.
 #
-# Lang split (8 + 8, balanced so trained-cohort numbers unblock §5.2 as soon
+# Lang split (8 + 8, balanced so trained-cohort numbers unblock §5.3 as soon
 # as GPU 0 is done):
 #   GPU 0 (trained6 + 2 anchors): vi ta jv mt ln ha en fr
 #   GPU 1 (other 8, incl. held-out): de es th sw af is cy kk

@@ -52,7 +52,7 @@ RANDOM_SEED    = 42
 DEFAULT_CKPT   = "dylan01163104/whisper-medium-dora-mix6"
 # Pinned HuggingFace revision for the released DoRA-mix6 adapter.
 # Kept in-sync with the frozen checkpoint used to produce the paper's
-# §5.3 numbers. Ignored when --checkpoint is a local directory.
+# §5.2 numbers. Ignored when --checkpoint is a local directory.
 DORA_REVISION  = "ad9144916cf661ea2ef462ad273077343c3d803d"
 
 # Held-out evaluation cohort for the mix6 FT run: 6 untrained low/mid-resource

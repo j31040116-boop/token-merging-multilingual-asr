@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Reproduce the two core full-GPU result tables sequentially on one GPU:
 #   1. whisper-medium, 18-language §5.1 sweep
-#   2. whisper-small, 16-language §5.2 sweep
+#   2. whisper-small, 16-language §5.3 sweep
 #
 # If either exits non-zero, the script stops without modifying code or frozen
 # artifacts. Compatible partial CSVs are resumed at language boundaries.

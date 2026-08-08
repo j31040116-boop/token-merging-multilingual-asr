@@ -28,16 +28,19 @@ Mean ΔWER (percentage points) at TRR = 0.40. "Worst degradation" is the largest
 | Setting | Model | Cohort | Mean ΔWER | Worst degradation | Largest improvement |
 |---|---|---|---:|---:|---:|
 | §5.1 Cross-lingual | whisper-medium | 12 mid/low-res langs¹ | −0.21 | +1.01 (Swahili) | −1.41 (Lingala) |
-| §5.2 Cross-scale | whisper-small | 6 trained langs | +0.08 | +0.82 (Lingala) | −0.73 (Tamil) |
-| §5.2 Cross-scale | whisper-medium | 6 trained langs | −0.50 | +0.02 (Maltese) | −1.41 (Lingala) |
-| §5.2 Cross-scale | whisper-medium + DoRA | 6 trained langs | −0.29 | +0.59 (Lingala) | −1.41 (Tamil) |
-| §5.2 Cross-scale | whisper-large-v3 | 6 trained langs | +0.32 | +1.65 (Javanese) | −0.40 (Maltese) |
-| §5.3 Held-out generalisation | whisper-medium + DoRA | 10 unseen langs | +0.23 | +0.97 (Icelandic) | −0.08 (Thai) |
-| §5.4 Theoretical enc. FLOPs | all 4 variants | @ TRR=0.40 | **24.3–25.1% reduction** | — | — |
+| §5.2 Fine-tuning composition | whisper-medium + DoRA | 6 trained langs | −0.29 | +0.59 (Lingala) | −1.41 (Tamil) |
+| §5.2 Held-out generalisation | whisper-medium + DoRA | 10 unseen langs | +0.23 | +0.97 (Icelandic) | −0.08 (Thai) |
+| §5.3 Cross-scale | whisper-small | 6 trained langs | +0.08 | +0.82 (Lingala) | −0.73 (Tamil) |
+| §5.3 Cross-scale | whisper-medium | 6 trained langs | −0.50 | +0.02 (Maltese) | −1.41 (Lingala) |
+| §5.3 Cross-scale | whisper-large-v3 | 6 trained langs | +0.32 | +1.65 (Javanese) | −0.40 (Maltese) |
 
-Every number back-verified against the 12 frozen CSVs in [`tmm_asr/paper_results/`](tmm_asr/paper_results/). See [`manifest.json`](tmm_asr/paper_results/manifest.json) for the paper-claim → CSV mapping with sha256s.
+**Computational efficiency (§5.4).** On Whisper-medium, encoder latency falls from 94.23 ms to 74.39 ms at TRR = 0.40, corresponding to a **1.27× speedup** across six languages and eight utterances per language. Speedups at TRR = 0.20 and 0.30 are 1.10× and 1.18×, respectively.
 
-¹ The §5.1 frozen CSV also contains 6 additional very-low-resource languages (am_et, pa_in, sn_zw, so_so, uz_uz, yo_ng) that were run in the same sweep but excluded from Table 2 / Figure 2 for cohort-consistency reasons. `fig2_lowres.py` filters to the plotted 12 automatically. Similarly, the high-resource anchor CSV contains cmn_hans_cn beyond the 4 plotted anchors. See [`manifest.json`](tmm_asr/paper_results/manifest.json) `langs_in_csv` vs `langs_plotted`, and [`docs/REPRODUCE.md`](docs/REPRODUCE.md) for the exact reproduction commands. These preserve a compatible schema, cohort, and row order; exact numerical differences should be reported rather than judged against a universal tolerance.
+**Analytical encoder FLOPs (Appendix A).** TRR = 0.40 reduces estimated encoder FLOPs by 24.3–25.1% across the evaluated model variants.
+
+Every number is backed by the 14 frozen CSVs in [`tmm_asr/paper_results/`](tmm_asr/paper_results/). See [`manifest.json`](tmm_asr/paper_results/manifest.json) for the paper-claim → CSV mapping with sha256s.
+
+¹ The §5.1 frozen CSV also contains 6 additional very-low-resource languages (am_et, pa_in, sn_zw, so_so, uz_uz, yo_ng) that were run in the same sweep but excluded from Appendix Table 3 / Figure 1 for cohort-consistency reasons. `fig2_lowres.py` filters to the plotted 12 automatically. Similarly, the high-resource anchor CSV contains cmn_hans_cn beyond the 4 plotted anchors. See [`manifest.json`](tmm_asr/paper_results/manifest.json) `langs_in_csv` vs `langs_plotted`, and [`docs/REPRODUCE.md`](docs/REPRODUCE.md) for the exact reproduction commands. These preserve a compatible schema, cohort, and row order; exact numerical differences should be reported rather than judged against a universal tolerance.
 
 ## Install
 
@@ -76,11 +79,11 @@ Additional runtime env vars (all optional):
 **Figures from frozen CSVs** — no GPU, ~5s each:
 
 ```bash
-python -m tmm_asr.figures.fig1_layer_similarity   # Figure 1
-python -m tmm_asr.figures.fig2_highres            # Figure 2 top
-python -m tmm_asr.figures.fig2_lowres             # Figure 2 bottom
-python -m tmm_asr.figures.fig3_cross_scale_ft     # Figure 3
-python -m tmm_asr.eval.flops                      # §5.4 FLOP table
+python -m tmm_asr.figures.fig2_highres            # Figure 1 top
+python -m tmm_asr.figures.fig2_lowres             # Figure 1 bottom
+python -m tmm_asr.figures.fig3_cross_scale_ft     # Figure 2
+python -m tmm_asr.figures.fig1_layer_similarity   # Figure 3
+python -m tmm_asr.eval.flops                      # Appendix A FLOP analysis
 ```
 
 **WER numbers from scratch** — 1×GPU unless noted, 264 samples/lang, seed 42. **For the exact `--tag` recipes that match the frozen CSV filenames**, see [docs/REPRODUCE.md](docs/REPRODUCE.md) — the defaults below will produce valid data but different filenames.
@@ -92,14 +95,14 @@ partial CSVs, and writes persistent logs under `outputs/reproduction_full/`.
 
 | Paper section | Command | Runtime |
 |---|---|---|
-| §5.1 Table 2 + Fig 2 (medium, 12 langs) | `python -m tmm_asr.eval.main_sweep --n 264 --tag single` → `..._halfplotted_single.csv` | ~9h* |
-| §5.2 cross-scale small | see [REPRODUCE.md §3](docs/REPRODUCE.md) — needs `--tag mix16 --langs <16>` | ~3–6h* |
-| §5.2 cross-scale large-v3 (dual-GPU) | `bash scripts/launch_large_v3_dual_gpu.sh && python scripts/merge_large_v3_shards.py` | ~9h wall-clock* |
-| §5.3 DoRA + merge on 6 trained | `python -m tmm_asr.eval.ft_merge --n 264` | ~5h* |
-| §5.3 ¶3 held-out 10 langs | `python -m tmm_asr.eval.ft_holdout --n 264` | ~6h* |
-| Figure 1 (layer sim, 3 models) | `bash scripts/regenerate_layer_similarity.sh` | ~28min |
+| §5.1 + Fig. 1 (medium, 12 langs) | `python -m tmm_asr.eval.main_sweep --n 264 --tag single` → `..._halfplotted_single.csv` | ~9h* |
+| §5.3 cross-scale small | see [REPRODUCE.md §3](docs/REPRODUCE.md) — needs `--tag mix16 --langs <16>` | ~3–6h* |
+| §5.3 cross-scale large-v3 (dual-GPU) | `bash scripts/launch_large_v3_dual_gpu.sh && python scripts/merge_large_v3_shards.py` | ~9h wall-clock* |
+| §5.2 DoRA + merge on 6 trained | `python -m tmm_asr.eval.ft_merge --n 264` | ~5h* |
+| §5.2 held-out 10 langs | `python -m tmm_asr.eval.ft_holdout --n 264` | ~6h* |
+| Figure 3 (layer sim, 3 models) | `bash scripts/regenerate_layer_similarity.sh` | ~28min |
 | DoRA training from scratch | `torchrun --standalone --nproc_per_node=2 -m tmm_asr.train.dora --steps 2000` | ~4h |
-| Wall-clock benchmark (Limitations) | `python -m tmm_asr.eval.wallclock` | ~1h |
+| §5.4 wall-clock benchmark | `python -m tmm_asr.eval.wallclock --encoder-only` | ~15–20min |
 
 \*Measured/projection on the paper's RTX 3080 Ti environment; runtime varies
 substantially with GPU, decoder output lengths, cache state, and language. The
@@ -122,7 +125,7 @@ combined frozen-cohort core run is approximately 16–19 hours on that setup.
 
 **Expected drift on re-run**: Re-runs should preserve the frozen CSVs' schema, cohort, and row order. Exact WER values can vary slightly with GPU hardware, drivers, CUDA/cuBLAS versions, and discrete decoding decisions; compare re-run results against the frozen artifacts and report the observed differences rather than assuming a universal numerical tolerance. For stricter cuBLAS determinism, export `CUBLAS_WORKSPACE_CONFIG=:4096:8` before running.
 
-**Not reproducible from this repo**: exact wall-clock latency numbers (§ Limitations) — those depend on the specific GPU and driver.
+**Hardware-dependent measurement**: the paper's exact wall-clock artifacts are included, and the benchmark protocol is reproducible; absolute latency depends on the GPU, driver, thermal state, and software stack.
 
 ## What's here
 
@@ -131,18 +134,18 @@ tmm_asr/
 ├── merging.py            core token-merging module
 ├── eval/
 │   ├── pipeline.py       shared pinned decode/preprocessing utilities (not a standalone CLI)
-│   ├── main_sweep.py     §5.1 cross-lingual (Table 2, Fig 2)
-│   ├── cross_scale.py    §5.2 cross-scale sweep
-│   ├── ft_merge.py       §5.3 DoRA + merging composition
-│   ├── ft_holdout.py     §5.3 ¶3 held-out generalisation
+│   ├── main_sweep.py     §5.1 cross-lingual evaluation (Fig. 1)
+│   ├── cross_scale.py    §5.3 cross-scale sweep (Fig. 2)
+│   ├── ft_merge.py       §5.2 DoRA + merging composition
+│   ├── ft_holdout.py     §5.2 held-out generalisation
 │   ├── layer_similarity.py Fig 1 forward-pass K-cosine profile
-│   ├── flops.py          §5.4 theoretical FLOP derivation
-│   └── wallclock.py      Limitations wall-clock benchmark
+│   ├── flops.py          Appendix A analytical FLOP derivation
+│   └── wallclock.py      §5.4 empirical wall-clock benchmark
 ├── figures/              one script per paper figure
 ├── train/dora.py         DoRA fine-tuning (mix6 cohort)
 └── data/                 FLEURS cache + 16-lang cohort table
 
-tmm_asr/paper_results/    12 frozen CSVs + manifest.json (ships inside the wheel)
+tmm_asr/paper_results/    14 frozen CSVs + manifest.json (ships inside the wheel)
 figures/                  the 4 paper figure PNGs
 scripts/                  orchestration
 tests/                    merging, resume, resolver, parity, and output-path tests
@@ -179,7 +182,7 @@ python -m build
 # → dist/tmm_asr-0.1.0-py3-none-any.whl
 ```
 
-The wheel ships all runtime deps in its `install_requires`, plus the 12 frozen CSVs + `manifest.json` under `tmm_asr/paper_results/`. Figure and FLOP defaults work out of the box after `pip install tmm-asr` — no source checkout needed.
+The wheel ships all runtime deps in its `install_requires`, plus the 14 frozen CSVs + `manifest.json` under `tmm_asr/paper_results/`. Figure, FLOP, and paper wall-clock artifacts work out of the box after `pip install tmm-asr` — no source checkout needed.
 
 ## Citation
 

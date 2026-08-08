@@ -23,7 +23,7 @@ Model and dataset revisions are pinned in `tmm_asr/eval/pipeline.py`; each execu
 
 ### One-command core GPU reproduction
 
-Run the complete whisper-medium §5.1 and whisper-small §5.2 sweeps sequentially
+Run the complete whisper-medium §5.1 and whisper-small §5.3 sweeps sequentially
 on one GPU from one terminal:
 
 ```bash
@@ -60,13 +60,13 @@ both full frozen cohorts. Runtime is hardware-, cache-, and language-dependent.
 
 ---
 
-## The 12 frozen CSVs
+## The 14 frozen CSVs
 
-### 1. Cross-lingual sweep on whisper-medium (§5.1, Table 2 medium-stock column, Figure 2 bottom)
+### 1. Cross-lingual sweep on whisper-medium (§5.1, Figure 1 bottom, Appendix Table 3)
 
 **Frozen file**: `fixed_rate_main_rerun_cfgA_n264_halfall_single.csv` — **contains 18 languages** (108 rows = 18 × 6 conditions).
 
-The paper plots the 12-language `main_sweep_12` subset (af_za, cy_gb, ha_ng, is_is, jv_id, kk_kz, ln_cd, mt_mt, sw_ke, ta_in, th_th, vi_vn). The other 6 rows (am_et, pa_in, sn_zw, so_so, uz_uz, yo_ng) — noted in [`main_sweep.py`](../tmm_asr/eval/main_sweep.py) as baseline WER ≥ 100% on whisper-medium — were collected in the same run but excluded from Table 2 / Figure 2 for cohort-consistency reasons. The figure script filters to the plotted 12 automatically.
+The paper plots the 12-language `main_sweep_12` subset (af_za, cy_gb, ha_ng, is_is, jv_id, kk_kz, ln_cd, mt_mt, sw_ke, ta_in, th_th, vi_vn). The other 6 rows (am_et, pa_in, sn_zw, so_so, uz_uz, yo_ng) — noted in [`main_sweep.py`](../tmm_asr/eval/main_sweep.py) as baseline WER ≥ 100% on whisper-medium — were collected in the same run but excluded from Appendix Table 3 / Figure 1 for cohort-consistency reasons. The figure script filters to the plotted 12 automatically.
 
 **Default command** (12 plotted langs → correct paper numbers, but a 72-row CSV — the frozen file has 108 rows over 18 langs):
 
@@ -98,11 +98,11 @@ Notes:
 - Cited numbers over the 12 plotted langs at TRR=0.40: mean ΔWER = −0.21 pp; worst degradation = +1.01 pp (sw_ke); largest improvement = −1.41 pp (ln_cd).
 - Runtime: approximately 9 h (12-lang projection) / 13 h (full 18-lang) on the measured 3080 Ti run. Resume support avoids losing completed languages.
 
-### 2. High-resource anchor sweep on whisper-medium (Figure 2 top)
+### 2. High-resource anchor sweep on whisper-medium (§5.1, Figure 1 top)
 
 **Frozen file**: `whisper_size_baseline_whisper-medium_n264_medium_highres.csv` — **contains 5 languages** (30 rows = 5 × 6 conditions).
 
-The paper plots the 4-language anchor subset (en_us, fr_fr, de_de, es_419); Mandarin (cmn_hans_cn) was collected in the same run but excluded so the anchor cohort aligns with the cross-scale plots in Figure 3.
+The paper plots the 4-language anchor subset (en_us, fr_fr, de_de, es_419); Mandarin (cmn_hans_cn) was collected in the same run but excluded so the anchor cohort aligns with the cross-scale plots in Figure 2.
 
 **Default command** — reproduces the frozen 5-language CSV under matching schema/cohort/row order (30 rows in the order `en_us, es_419, de_de, cmn_hans_cn, fr_fr`):
 
@@ -137,11 +137,11 @@ CUDA_VISIBLE_DEVICES=0 python -m tmm_asr.eval.cross_scale \
 ```
 
 Notes:
-- `--tag medium_highres` matches the filename Figure 2 top reads.
+- `--tag medium_highres` matches the filename Figure 1 top reads.
 - Row order in the frozen CSV = the CLI order above; cross_scale.py iterates `--langs` in list order (no sort), so reordering shuffles the rows even when contents are equivalent.
 - Runtime: approximately 4.3 h for the frozen 5-language run; hardware and decoded output lengths materially affect it.
 
-### 3. Cross-scale small (§5.2, Figure 3)
+### 3. Cross-scale small (§5.3, Figure 2)
 
 **Frozen file**: `whisper_size_baseline_whisper-small_n264_mix16.csv`
 
@@ -161,7 +161,7 @@ Notes:
 - Row order above matches the row order in the frozen CSV (`vi_vn ha_ng ln_cd ta_in mt_mt jv_id en_us fr_fr de_de es_419 th_th sw_ke af_za is_is cy_gb kk_kz`). `cross_scale.py` iterates `--langs` in list order (no sort), so reordering here breaks row-level match even though contents are equivalent.
 - Runtime: approximately 3–6 h on a single 3080 Ti, depending on cache state and decoded output lengths.
 
-### 4. Cross-scale large-v3 (§5.2, Figure 3, dual-GPU)
+### 4. Cross-scale large-v3 (§5.3, Figure 2, dual-GPU)
 
 **Frozen files**: `..._mix16_gpu0.csv` + `..._mix16_gpu1.csv` (and their merger `..._mix16.csv`)
 
@@ -176,7 +176,7 @@ Notes:
 - Merger defaults to that same directory.
 - To rebuild the frozen merged CSV in place: `python scripts/merge_large_v3_shards.py --in-dir tmm_asr/paper_results`.
 
-### 5. DoRA + merging composition (§5.3, Figure 3)
+### 5. DoRA + merging composition (§5.2, Table 2 and Figure 2)
 
 **Frozen file**: `finetune_merge_rerun_cfgA_n264_checkpoint-2000_mix6.csv`
 
@@ -207,7 +207,7 @@ Notes:
 - The HF adapter is pinned at revision `ad9144916cf661ea2ef462ad273077343c3d803d` and matches the local `checkpoint-2000` snapshot bit-for-bit.
 - Runtime: approximately 4.9 h in the frozen run.
 
-### 6. DoRA held-out generalisation (§5.3 ¶3)
+### 6. DoRA held-out generalisation (§5.2, Appendix Table 5)
 
 **Frozen file**: `finetune_holdout_cfgA_n264_checkpoint-2000_mix6.csv`
 
@@ -224,7 +224,7 @@ Notes:
 - Default 10-lang held-out cohort (4 anchors + 6 untrained mid/low): en_us fr_fr de_de es_419 th_th sw_ke af_za is_is cy_gb kk_kz.
 - Runtime: approximately 5.9 h in the frozen run.
 
-### 7–9. Layer-similarity per scale (Figure 1)
+### 7–9. Layer-similarity per scale (Figure 3)
 
 **Frozen files**:
 - `layer_similarity_whisper-small_n264.csv`
@@ -237,7 +237,7 @@ bash scripts/regenerate_layer_similarity.sh
 
 Runs all three sequentially (~28 min), writes to `$TMM_OUT_DIR` (default `outputs/eval/layer_similarity/`), then regenerates the figure from those fresh CSVs.
 
-### 10. Theoretical FLOP summary (§5.4)
+### 10. Theoretical FLOP summary (Appendix A)
 
 **Frozen file**: `theoretical_flops_summary.csv`
 
@@ -267,10 +267,10 @@ Note: this re-derives per-model FLOP reductions from the `_with_flops` sidecar C
 Every figure regenerates from the frozen CSVs in `tmm_asr/paper_results/` (no GPU):
 
 ```bash
-python -m tmm_asr.figures.fig1_layer_similarity   # Figure 1
-python -m tmm_asr.figures.fig2_highres            # Figure 2 top
-python -m tmm_asr.figures.fig2_lowres             # Figure 2 bottom
-python -m tmm_asr.figures.fig3_cross_scale_ft     # Figure 3
+python -m tmm_asr.figures.fig2_highres            # Figure 1 top
+python -m tmm_asr.figures.fig2_lowres             # Figure 1 bottom
+python -m tmm_asr.figures.fig3_cross_scale_ft     # Figure 2
+python -m tmm_asr.figures.fig1_layer_similarity   # Figure 3
 ```
 
 To regenerate from a fresh set of CSVs (e.g. after re-running an eval), pass `--in-dir`:
@@ -283,9 +283,9 @@ PNG outputs are visually identical when regenerated from the frozen CSVs on the 
 
 ---
 
-## Wall-clock benchmark (Limitations §)
+## Wall-clock benchmark (§5.4)
 
-Not a frozen CSV — depends on hardware. On our 3080 Ti it reproduces the paper's 1.21× encoder speedup at TRR=0.40 (measured 1.27× at N=48):
+The paper-canonical measurements are frozen as `wallclock.csv` and `wallclock_summary.csv`. They report a 1.27× encoder speedup at TRR=0.40 (N=48: 6 languages × 8 utterances) on the paper's RTX 3080 Ti. Absolute latency is hardware-dependent, but the benchmark protocol can be reproduced with:
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python -m tmm_asr.eval.wallclock \

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Regenerate Figure 1 (per-layer adjacent K-cosine similarity) on the
+# Regenerate Figure 3 (per-layer adjacent K-cosine similarity) on the
 # 16-language evaluation cohort. Sequential single-GPU schedule (~28 min):
 #   1. whisper-small      ~3 min
 #   2. whisper-medium     ~7 min
@@ -12,8 +12,8 @@
 # Background + tail:
 #   mkdir -p outputs
 #   nohup bash scripts/regenerate_layer_similarity.sh \
-#         > outputs/regen_fig1_$(date +%Y%m%d_%H%M).log 2>&1 &
-#   tail -f outputs/regen_fig1_*.log
+#         > outputs/regen_fig3_$(date +%Y%m%d_%H%M).log 2>&1 &
+#   tail -f outputs/regen_fig3_*.log
 #
 # Pin GPU:
 #   CUDA_VISIBLE_DEVICES=0 bash scripts/regenerate_layer_similarity.sh
@@ -34,7 +34,7 @@ LANGS="$ANCHORS $MAIN12"
 N=264
 
 echo "============================================================"
-echo "Regenerating Figure 1 layer-similarity CSVs"
+echo "Regenerating Figure 3 layer-similarity CSVs"
 echo "  langs ($(echo $LANGS | wc -w)): $LANGS"
 echo "  n_samples: $N/lang"
 echo "  GPU: ${CUDA_VISIBLE_DEVICES:-auto}"

@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# Regenerate the Figure 2 (top) high-resource anchor CSV.
+# Regenerate the Figure 1 (top) high-resource anchor CSV.
 #
 # The frozen paper CSV `whisper_size_baseline_whisper-medium_n264_medium_highres.csv`
-# contains 5 languages (en, es, de, fr, cmn) even though Figure 2 top plots
+# contains 5 languages (en, es, de, fr, cmn) even though Figure 1 top plots
 # only the 4-language anchor subset (en/es/de/fr). Mandarin was collected in
 # the same run but excluded from the plot to keep the anchor cohort aligned
-# with Figure 3.
+# with Figure 2.
 #
 # Pass --plotted to run only the 4 plotted anchors. Default (or --frozen)
 # reproduces the shipped 5-language cohort and row order (~4.3 h on the
