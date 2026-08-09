@@ -4,9 +4,8 @@ title: "Token Merging for Multilingual Speech Recognition: A Systematic Study Ac
 authors:
   - family-names: Holyoak
     given-names: Dylan Luke
-    affiliation: "University of California, Los Angeles"
 license: Apache-2.0
-repository-code: "https://github.com/j31040116-boop/token-merging-multilingual-asr"
+repository-code: "https://github.com/chironk/token-merging-multilingual-asr"
 version: 0.1.0
 date-released: 2026-08-02
 preferred-citation:

@@ -73,8 +73,8 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/j31040116-boop/token-merging-multilingual-asr"
-Repository = "https://github.com/j31040116-boop/token-merging-multilingual-asr"
+Homepage = "https://github.com/chironk/token-merging-multilingual-asr"
+Repository = "https://github.com/chironk/token-merging-multilingual-asr"
 
 [tool.setuptools.packages.find]
 include = ["tmm_asr*"]

@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://www.icnlsp.org/2026welcome/"><img alt="ICNLSP 2026 oral" src="https://img.shields.io/badge/ICNLSP%202026-oral-1f6feb"></a>
-  <a href="https://github.com/j31040116-boop/token-merging-multilingual-asr"><img alt="GitHub repository" src="https://img.shields.io/badge/code-GitHub-181717?logo=github"></a>
+  <a href="https://github.com/chironk/token-merging-multilingual-asr"><img alt="GitHub repository" src="https://img.shields.io/badge/code-GitHub-181717?logo=github"></a>
   <a href="https://huggingface.co/dylan01163104/whisper-medium-dora-mix6"><img alt="HuggingFace: whisper-medium-dora-mix6" src="https://img.shields.io/badge/🤗_model-whisper--medium--dora--mix6-yellow"></a>
   <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-blue"></a>
 </p>
@@ -19,7 +19,7 @@ We apply adjacent token merging (ToMe / A-ToMe) to the Whisper encoder across 3 
 
 <p align="center"><img src="figures/fig_cross_scale_ft.png" width="720"></p>
 
-**Links**: 💻 [code](https://github.com/j31040116-boop/token-merging-multilingual-asr) · 🤗 [whisper-medium-dora-mix6](https://huggingface.co/dylan01163104/whisper-medium-dora-mix6) · 📊 [frozen result CSVs](tmm_asr/paper_results/) · 🖼 [paper figures](figures/)
+**Links**: 💻 [code](https://github.com/chironk/token-merging-multilingual-asr) · 🤗 [whisper-medium-dora-mix6](https://huggingface.co/dylan01163104/whisper-medium-dora-mix6) · 📊 [frozen result CSVs](tmm_asr/paper_results/) · 🖼 [paper figures](figures/)
 
 ## Headline results
 

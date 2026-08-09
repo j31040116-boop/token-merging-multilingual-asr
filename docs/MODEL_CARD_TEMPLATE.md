@@ -25,7 +25,7 @@ DoRA-adapted **openai/whisper-medium** on 6 low-resource FLEURS languages: Vietn
 
 Backs §5.2 of "Token Merging for Multilingual Speech Recognition: A Systematic Study Across Model Scale and Fine-Tuning" (Dylan Luke Holyoak — ICNLSP 2026 oral).
 
-- Code: https://github.com/j31040116-boop/token-merging-multilingual-asr
+- Code: https://github.com/chironk/token-merging-multilingual-asr
 
 ## Usage
 
