@@ -1,7 +1,7 @@
 # Token Merging for Multilingual Speech Recognition
 
 <p align="center">
-  <a href="https://www.icnlsp.org/2026"><img alt="ICNLSP 2026 oral" src="https://img.shields.io/badge/ICNLSP%202026-oral-1f6feb"></a>
+  <a href="https://www.icnlsp.org/2026welcome/"><img alt="ICNLSP 2026 oral" src="https://img.shields.io/badge/ICNLSP%202026-oral-1f6feb"></a>
   <a href="https://github.com/j31040116-boop/token-merging-multilingual-asr"><img alt="GitHub repository" src="https://img.shields.io/badge/code-GitHub-181717?logo=github"></a>
   <a href="https://huggingface.co/dylan01163104/whisper-medium-dora-mix6"><img alt="HuggingFace: whisper-medium-dora-mix6" src="https://img.shields.io/badge/🤗_model-whisper--medium--dora--mix6-yellow"></a>
   <a href="LICENSE"><img alt="License: Apache-2.0" src="https://img.shields.io/badge/license-Apache--2.0-blue"></a>
@@ -10,7 +10,7 @@
 <p align="center">
   <a href="https://www.ucla.edu"><img src="docs/assets/ucla-logo.png" alt="UCLA" height="60"></a>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://www.icnlsp.org/2026"><img src="docs/assets/icnlsp-logo.png" alt="ICNLSP 2026" height="60"></a>
+  <a href="https://www.icnlsp.org/2026welcome/"><img src="docs/assets/icnlsp-logo.png" alt="ICNLSP 2026" height="60"></a>
 </p>
 
 Code + frozen results for **"Token Merging for Multilingual Speech Recognition: A Systematic Study Across Model Scale and Fine-Tuning"** — Dylan Luke Holyoak. Oral at [ICNLSP 2026](https://www.icnlsp.org/2026welcome/).
